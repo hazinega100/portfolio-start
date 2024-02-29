@@ -2,9 +2,18 @@ import React from "react";
 import styled from "styled-components";
 import moonIcon from "../../assets/images/icons/moon.svg";
 
-export const Menu = () => {
+type PropsType = {
+    dark: boolean
+    callback: (value: boolean) => void
+}
+
+export const Menu: React.FC<PropsType> = ({dark, callback}) => {
     const changeTheme = () => {
-        console.log('changed theme')
+        if (dark) {
+            callback(false)
+        } else {
+            callback(true)
+        }
     }
     return (
         <NavStyle>
@@ -20,12 +29,15 @@ export const Menu = () => {
 };
 
 const NavStyle = styled.nav`
-  & ul {
+  ul {
     display: flex;
     align-items: center;
     gap: 60px;
-    & li > a {
+    li > a {
       color: black;
+    }
+    li > img {
+      cursor: pointer;
     }
     @media (max-width: 690px) {
       gap: 30px;

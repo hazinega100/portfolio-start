@@ -48,6 +48,9 @@ const MainStyle = styled.section`
   justify-content: center;
   align-items: center;
   background: url(${bgWhite}) center/cover;
+  //background-position: center;
+  //background-repeat: repeat;
+  //background-size:  cover;
 `
 const MainMyBlock = styled.div`
   padding: 40px 100px 40px 100px;
@@ -57,11 +60,13 @@ const MainMyBlock = styled.div`
   border-radius: 200px 0 200px 0;
   backdrop-filter: blur(20px);
   background: linear-gradient(132.42deg, rgba(255, 255, 255, 0.5) -10.056%, rgba(0, 71, 255, 0.05) 104.325%);
+
   & img {
     margin-right: 45px;
     max-width: 401px;
     max-height: 401px;
     transform: rotate(-3.24deg);
+    object-fit: cover;
 
     box-sizing: border-box;
     border: 25px solid rgb(255, 255, 255);
@@ -78,6 +83,7 @@ const MainMyBlock = styled.div`
     text-align: left;
     margin-bottom: 42px;
   }
+
   @media (max-width: 1024px) {
     margin: 0 101px;
     flex-wrap: wrap;
@@ -91,6 +97,7 @@ const MainMyBlock = styled.div`
     img {
       height: 190px;
     }
+
     p {
       font-size: 12px;
     }
@@ -103,19 +110,21 @@ export const H1Style = styled.h1`
   line-height: 136%;
   text-align: left;
   margin-bottom: 19px;
+
   span {
     color: rgb(33, 87, 242);
   }
+
   @media (max-width: 425px) {
     font-size: 34px;
   }
 `
-const Button = styled.button`
-  width: 200px;
-  height: 54px;
+export const Button = styled.button<{ color?: string, fontSize?: string }>`
+  padding: 15px 35px;
   border-radius: 20px;
-  background: rgb(33, 87, 242);
+  background: ${props => props.color || "#2157f2"};
   color: white;
+  font-size: ${props => props.fontSize};
   text-transform: uppercase;
 `
 const MainSkillBox = styled.div`

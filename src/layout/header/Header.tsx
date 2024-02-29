@@ -3,11 +3,16 @@ import styled from "styled-components";
 import {Logo} from "../../components/logo/Logo";
 import {Menu} from "../../components/menu/Menu";
 
-export const Header = () => {
+type PropsType = {
+    dark: boolean
+    callback: (value: boolean) => void
+}
+
+export const Header: React.FC<PropsType> = ({dark, callback}) => {
     return (
         <HeaderStyle>
             <Logo />
-            <Menu />
+            <Menu dark={dark} callback={callback}/>
         </HeaderStyle>
     );
 };

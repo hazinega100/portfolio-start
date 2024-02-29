@@ -1,19 +1,38 @@
-import React from "react";
-import styled from "styled-components";
+import React, {useState} from "react";
+import styled, {css} from "styled-components";
 import ellipseSmall from "../../../assets/images/icons/ellipseSmall.svg"
 import rec1 from "../../../assets/images/Rectangle 1.png"
 import rec2 from "../../../assets/images/Rectangle 2.png"
 import rec3 from "../../../assets/images/Rectangle 3.png"
 
+type FilterType = "html/css" | "react" | "redux"
+
 export const Projects = () => {
+    const [filter, setFilter] = useState<FilterType>("html/css")
+
     return (
         <ProjectsStyle>
-            <h1>Projects</h1>
+            <h2>Projects</h2>
             <img src={ellipseSmall} alt="ellipseSmall"/>
             <FilterWrapperBtn>
-                <FilterBtn>HTML/CSS</FilterBtn>
-                <FilterBtn>React</FilterBtn>
-                <FilterBtn>Redux</FilterBtn>
+                <FilterBtn active={filter === "html/css"}
+                           onClick={() => {
+                               setFilter("html/css")
+                           }}
+                >HTML/CSS
+                </FilterBtn>
+                <FilterBtn active={filter === "react"}
+                           onClick={() => {
+                               setFilter("react")
+                           }}
+                >React
+                </FilterBtn>
+                <FilterBtn active={filter === "redux"}
+                           onClick={() => {
+                               setFilter("redux")
+                           }}
+                >Redux
+                </FilterBtn>
             </FilterWrapperBtn>
             <ProjectsWrapper>
                 <Project>
@@ -49,7 +68,7 @@ const ProjectsStyle = styled.section`
   justify-content: center;
   align-items: center;
 
-  h1 {
+  h2 {
     font-size: 32px;
     margin-bottom: 10px;
   }
@@ -60,12 +79,19 @@ const FilterWrapperBtn = styled.div`
   gap: 40px;
   margin: 60px 0;
 `
-const FilterBtn = styled.button`
+const FilterBtn = styled.button<{ active?: boolean }>`
   width: 160px;
   height: 45px;
+  font-size: 20px;
   border: 3px solid rgb(166, 188, 250);
   border-radius: 67px;
   background: rgb(248, 250, 255);
+  transition: background-color;
+
+  ${props => props.active && css<{ active?: boolean }>`
+    color: white;
+    background-color: rgb(166, 188, 250);
+  `}
 `
 const ProjectsWrapper = styled.div`
   display: flex;
@@ -77,6 +103,7 @@ const ProjectsWrapper = styled.div`
 const Project = styled.div`
   max-width: 270px;
   max-height: 400px;
+
   img {
     width: 270px;
   }

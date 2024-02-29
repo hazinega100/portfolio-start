@@ -1,17 +1,21 @@
-import React from "react";
+import React, {useState} from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import {GlobalStyles} from "./layout/GlobalStyles";
+import {ThemeProvider} from "styled-components";
+import {theme} from "./layout/Theme.styled";
 
 const root = ReactDOM.createRoot(
     document.getElementById("root") as HTMLElement
 );
 root.render(
     <React.StrictMode>
-        <App/>
-        <GlobalStyles/>
+        <ThemeProvider theme={theme}>
+            <App/>
+            <GlobalStyles/>
+        </ThemeProvider>
     </React.StrictMode>
 );
 

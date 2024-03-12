@@ -5,8 +5,10 @@ import {Footer} from "./layout/footer/Footer";
 import {AboutMe} from "./layout/sections/aboutme/AboutMe";
 import {Projects} from "./layout/sections/projects/Projects";
 import styled from "styled-components";
-import {theme} from "./layout/Theme.styled";
+import {theme} from "./styles/Theme.styled";
 import {useState} from "react";
+import {Certificates} from "./layout/sections/certificates/Certificates";
+import {Contacts} from "./layout/sections/contacts/Contacts";
 
 
 function App() {
@@ -17,9 +19,11 @@ function App() {
     return (
         <AppStyled dark={dark}>
             <Header dark={dark} callback={changeTheme}/>
-            <Main/>
+            <Main dark={dark}/>
             <Projects/>
             <AboutMe/>
+            <Certificates />
+            <Contacts />
             <Footer/>
         </AppStyled>
     );

@@ -6,14 +6,19 @@ import photoshop from "../../../assets/images/icons/skills/photoshop.svg"
 import after from "../../../assets/images/icons/skills/after.svg"
 import illustrator from "../../../assets/images/icons/skills/illustrator.svg"
 import figma from "../../../assets/images/icons/skills/figma.svg"
+import {Button} from "../../../components/Button";
 
-export const Main = () => {
+type PropsType = {
+    dark: boolean
+}
+
+export const Main: React.FC<PropsType> = ({dark}) => {
     return (
-        <MainStyle>
+        <MainStyle dark={dark}>
             <MainMyBlock>
                 <img src={avatar} alt="avatar"/>
                 <div>
-                    <H1Style>I'm <span>Egor</span> Guzanov web-developer</H1Style>
+                    <MainTitle>I'm <span>Egor</span> Guzanov web-developer</MainTitle>
                     <p>Draft is a revolutionary mobile app built to help you manage your business easily and save your
                         money.</p>
                     <Button>See Projects</Button>
@@ -41,7 +46,7 @@ export const Main = () => {
     );
 };
 
-const MainStyle = styled.section`
+const MainStyle = styled.section<PropsType>`
   padding: 200px 0 80px 0;
   display: flex;
   flex-direction: column;
@@ -103,7 +108,7 @@ const MainMyBlock = styled.div`
     }
   }
 `
-export const H1Style = styled.h1`
+export const MainTitle = styled.h1`
   max-width: 600px;
   font-size: 60px;
   font-weight: 700;
@@ -118,14 +123,6 @@ export const H1Style = styled.h1`
   @media (max-width: 425px) {
     font-size: 34px;
   }
-`
-export const Button = styled.button<{ color?: string, fontSize?: string }>`
-  padding: 15px 35px;
-  border-radius: 20px;
-  background: ${props => props.color || "#2157f2"};
-  color: white;
-  font-size: ${props => props.fontSize};
-  text-transform: uppercase;
 `
 const MainSkillBox = styled.div`
   margin: 47px 0 0 33px;

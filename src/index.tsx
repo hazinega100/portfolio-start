@@ -1,11 +1,10 @@
-import React, {useState} from "react";
+import React from "react";
 import ReactDOM from "react-dom/client";
-import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-import {GlobalStyles} from "./layout/GlobalStyles";
+import {GlobalStyles} from "./styles/Global.styled";
 import {ThemeProvider} from "styled-components";
-import {theme} from "./layout/Theme.styled";
+import {theme} from "./styles/Theme.styled";
 
 const root = ReactDOM.createRoot(
     document.getElementById("root") as HTMLElement

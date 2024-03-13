@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import {MainTitle} from "../main/Main";
+import {MainTitle} from "../../../components/MainTitle";
 import wa from "../../../assets/images/icons/social/wa.svg"
 import tel from "../../../assets/images/icons/social/telegram.svg"
 import ins from "../../../assets/images/icons/social/ins.svg"
@@ -16,7 +16,7 @@ const myItems: string[] = [
 
 export const AboutMe = () => {
     return (
-        <AboutMeSection>
+        <AboutMeSection id={'about'}>
             <AboutMeBox>
                 <div>
                     <a href="#"><img src={wa} alt="wa"/></a>
@@ -39,7 +39,6 @@ const AboutMeSection = styled.section`
   align-items: end;
   padding: 50px;
   height: 500px;
-  background-color: rgb(166, 188, 250);
 `
 const AboutMeBox = styled.div`
   padding: 20px 10px 50px 30px;

@@ -5,7 +5,7 @@ export const Footer = () => {
     return (
         <FooterStyle>
             <h3>Coded by Egor Guzanov, web-dev</h3>
-            <p>All Rights Reserved 2024</p>
+            <p>© All Rights Reserved 2024</p>
         </FooterStyle>
     );
 };
@@ -16,7 +16,7 @@ const FooterStyle = styled.footer`
   justify-content: center;
   align-items: center;
   height: 250px;
-  background-color: #A5BBF8;
+  background-color: #00A3FF;
   color: white;
   h3 {
     font-size: 16px;

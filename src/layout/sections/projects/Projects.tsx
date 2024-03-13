@@ -12,7 +12,7 @@ export const Projects = () => {
     const [filter, setFilter] = useState<FilterType>("html/css")
 
     return (
-        <ProjectsStyle>
+        <ProjectsStyle id={'projects'}>
             <SectionTitle title="Projects"/>
             <FilterWrapperBtn>
                 <FilterBtn active={filter === "html/css"}

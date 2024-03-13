@@ -1,4 +1,5 @@
 import {createGlobalStyle} from "styled-components";
+import {theme} from "./Theme.styled";
 
 export const GlobalStyles = createGlobalStyle`
   @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
@@ -43,5 +44,8 @@ export const GlobalStyles = createGlobalStyle`
     background-color: unset;
     border: none;
     cursor: pointer;
+  }
+  section:nth-of-type(odd) {
+    background-color: ${theme.colors.primary};
   }
 `

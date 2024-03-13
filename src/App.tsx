@@ -9,6 +9,7 @@ import {theme} from "./styles/Theme.styled";
 import {useState} from "react";
 import {Certificates} from "./layout/sections/certificates/Certificates";
 import {Contacts} from "./layout/sections/contacts/Contacts";
+import {Skills} from "./layout/sections/skills/Skills";
 
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
             <Main dark={dark}/>
             <Projects/>
             <AboutMe/>
+            <Skills />
             <Certificates />
             <Contacts />
             <Footer/>

@@ -6,7 +6,7 @@ import {FlexWrapper} from "../../../components/FlexWrapper";
 
 export const Certificates = () => {
     return (
-        <CertificatesStyle>
+        <CertificatesStyle id={'certificate'}>
             <SectionTitle title="Certificates"/>
             <FlexWrapper justifyContent={"center"} alignItems={"center"}>
                 <Slider />
@@ -15,7 +15,6 @@ export const Certificates = () => {
     );
 };
 
-const CertificatesStyle = styled.div`
+const CertificatesStyle = styled.section`
   min-height: 100vh;
-  background-color: lightblue;
 `
